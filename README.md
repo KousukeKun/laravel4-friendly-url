@@ -2,17 +2,12 @@
 
 Easy creation of slugs for your Eloquent models in Laravel 4.
 
-[![Latest Stable Version](https://poser.pugx.org/cviebrock/eloquent-sluggable/v/stable.png)](https://packagist.org/packages/cviebrock/eloquent-sluggable)
-[![Total Downloads](https://poser.pugx.org/cviebrock/eloquent-sluggable/downloads.png)](https://packagist.org/packages/cviebrock/eloquent-sluggable)
-
 * [Background](#background)
 * [Installation and Requirements](#installation)
 * [Updating your Eloquent Models](#eloquent)
 * [Using the Class](#usage)
 * [Configuration](#config)
 * [Extending Sluggable](#extending)
-* [Upgrading from 1.0](#upgrading)
-* [Bugs, Suggestions and Contributions](#bugs)
 * [Copyright and License](#copyright)
 
 
@@ -223,7 +218,7 @@ Note: If `unique` is enabled (which it is by default), and you anticipate having
 
 Defines the method used to turn the sluggable string into a slug.  There are three possible options for this configuration:
 
-1. When `method` is null (the default setting), the package uses Laravel's `Str::slug()` method to create the slug.
+1. When `method` is null (the default setting), the package uses modified Laravel's `Str::slug()` method to create the slug.
 
 2. When `method` is a callable, then that function or class method is used.  The function/method should expect two parameters: the string to process, and a separator string.  For example, to duplicate the default behaviour, you could do:
 
@@ -313,28 +308,6 @@ Writes the (generated, valid, and unique) slug to the model's attributes.
 
 
 
-<a name="upgrading"></a>
-## Upgrading From a 1.x Version
-
-1. There is no facade, so you should remove the alias entry from `app/config/app.php`.
-2. Add the interface and trait to your models and change the `$sluggable` configuration array from `public static` to `protected`:
-````php
-use Cviebrock\EloquentSluggable\SluggableInterface;
-use Cviebrock\EloquentSluggable\SluggableTrait;
-
-class MyModel extends Eloquent implement SluggableInterface {
-
-	use SluggableTrait;
-
-	protected $sluggable = array(
-		// ...
-	);
-}
-````
-3. Any references to `Sluggable::make($model,[false|true])` should become `$model->sluggify()` or `$model->resluggify()`.  This will be of importance to [Ardent](./README-Ardent.md) users.
-4. Enable the `use_cache` configuration if at all possible.
-
-
 <a name="bugs"></a>
 ## Bugs, Suggestions and Contributions
 
@@ -356,6 +329,6 @@ Please use Github for bugs, comments, suggestions.
 <a name="copyright"></a>
 ## Copyright and License
 
-Eloquent-Sluggable was written by Colin Viebrock and released under the MIT License. See the LICENSE file for details.
+Laravel4 Friendly Url was modify from Eloquent-Sluggable by Watee Wichiennit and released under the MIT License. See the LICENSE file for details.
 
-Copyright 2013 Colin Viebrock
+Copyright 2014 Watee Wichiennit
