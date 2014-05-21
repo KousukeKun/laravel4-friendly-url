@@ -1,4 +1,4 @@
-<?php namespace Cviebrock\EloquentSluggable;
+<?php namespace Expstudio\FriendlyUrl;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputArgument;

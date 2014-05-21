@@ -54,7 +54,7 @@ First, you'll need to add the package to the `require` attribute of your `compos
 ```json
 {
     "require": {
-        "cviebrock/eloquent-sluggable": "2.*"
+        "expstudio/friendlyurl": "dev-master"
     },
 }
 ```
@@ -70,12 +70,12 @@ Then, update `app/config/app.php` by adding an entry for the service provider.
 
 		// ...
 
-		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
+		'Expstudio\FriendlyUrl\SluggableServiceProvider',
 
 	);
 ```
 
-Finally, from the command line again, run `php artisan config:publish cviebrock/eloquent-sluggable` to publish the default configuration file.
+Finally, from the command line again, run `php artisan config:publish expstudio/friendlyurl` to publish the default configuration file.
 
 
 <a name="eloquent"></a>
@@ -84,8 +84,8 @@ Finally, from the command line again, run `php artisan config:publish cviebrock/
 Your models should implement Sluggable's interface and use it's trait.  You should also define a protected property `$sluggable` with any model-specific configurations (see [Configuration](#config) below for details):
 
 ```php
-use Cviebrock\EloquentSluggable\SluggableInterface;
-use Cviebrock\EloquentSluggable\SluggableTrait;
+use Expstudio\FriendlyUrl\SluggableInterface;
+use Expstudio\FriendlyUrl\SluggableTrait;
 
 class Post extends Eloquent implements SluggableInterface
 {
@@ -154,7 +154,7 @@ $new_post = $post->replicate()->resluggify();
 
 Configuration was designed to be as flexible as possible.  You can set up defaults for all of your Eloquent models, and then override those settings for individual models.
 
-By default, global configuration can be set in the `app/config/packages/cviebrock/eloquent-sluggable/config.php` file.  If a configuration isn't set, then the package defaults from `vendor/cviebrock/eloquent-sluggable/src/config/config.php` are used.  Here is an example configuration, with all the default settings shown:
+By default, global configuration can be set in the `app/config/packages/expstudio/friendlyurl/config.php` file.  If a configuration isn't set, then the package defaults from `vendor/expstudio/friendlyurl/src/config/config.php` are used.  Here is an example configuration, with all the default settings shown:
 
 ```php
 return array(

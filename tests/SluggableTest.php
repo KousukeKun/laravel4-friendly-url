@@ -57,7 +57,7 @@ class SluggableTest extends TestCase {
    */
 	protected function getPackageProviders()
 	{
-		return array('Cviebrock\EloquentSluggable\SluggableServiceProvider');
+		return array('Expstudio\FriendlyUrl\SluggableServiceProvider');
 	}
 
 

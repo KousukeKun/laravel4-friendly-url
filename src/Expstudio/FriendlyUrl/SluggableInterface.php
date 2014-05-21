@@ -1,6 +1,6 @@
 <?php
 
-namespace Cviebrock\EloquentSluggable;
+namespace Expstudio\FriendlyUrl;
 
 
 interface SluggableInterface {

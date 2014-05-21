@@ -1,7 +1,7 @@
-<?php namespace Cviebrock\EloquentSluggable;
+<?php namespace Expstudio\FriendlyUrl;
 
 
-trait SluggableTrait {
+class Sluggable {
 
 
 	protected function needsSlugging()
@@ -47,7 +47,7 @@ trait SluggableTrait {
 
 		if ( $method === null )
 		{
-			$slug = \Str::slug($source, $separator);
+			$slug = NonLatinSlugger::slug($source, $separator);
 		}
 		elseif ( $method instanceof Closure )
 		{

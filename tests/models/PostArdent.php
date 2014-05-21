@@ -1,8 +1,8 @@
 <?php
 
 use LaravelBook\Ardent\Ardent;
-use Cviebrock\EloquentSluggable\SluggableInterface;
-use Cviebrock\EloquentSluggable\SluggableTrait;
+use Expstudio\FriendlyUrl\SluggableInterface;
+use Expstudio\FriendlyUrl\SluggableTrait;
 
 class PostArdent extends Ardent implements SluggableInterface {
 

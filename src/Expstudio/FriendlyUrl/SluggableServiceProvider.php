@@ -1,4 +1,4 @@
-<?php namespace Cviebrock\EloquentSluggable;
+<?php namespace Expstudio\FriendlyUrl;
 
 
 use Illuminate\Support\ServiceProvider;
@@ -19,7 +19,7 @@ class SluggableServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('cviebrock/eloquent-sluggable');
+		$this->package('expstudio/friendlyurl');
 	}
 
 	/**

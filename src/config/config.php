@@ -39,7 +39,7 @@ return array(
 	'max_length' => null,
 
 	/**
-	 * If left to "null", then use Laravel's built-in Str::slug() method to
+	 * If left to "null", then use Laravel's modified Str::slug() method to
 	 * generate the slug (with the separator defined below).
 	 *
 	 * Set this to a closure that accepts two parameters (string and separator)
