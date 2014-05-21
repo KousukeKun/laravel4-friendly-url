@@ -1,4 +1,4 @@
-# Eloquent-Sluggable
+# Laravel 4 Friendly URL
 
 Easy creation of slugs for your Eloquent models in Laravel 4.
 
